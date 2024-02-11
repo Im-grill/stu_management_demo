@@ -65,17 +65,16 @@ class StudentController extends Controller
         $student->email = $request->email;
         $student->phone = $request->phone;
         $student->gender = $request->gender;
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $imageName);
-            $student->image = $imageName;
+        if ($request->hasFile('photo')) {
+            $photoPath = $request->file('photo')->storeAs('public/photos', $request->file('photo')->getClientOriginalName());
+            $student->photo = basename($photoPath);
         }
         $student->save();
     
         return redirect()->route('students.index')->with('success', 'Student updated successfully.');
     }
 
+    //Delete a student
     public function destroy(Student $student)
     {
         $student->delete();
