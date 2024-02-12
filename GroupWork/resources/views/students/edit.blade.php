@@ -1,63 +1,56 @@
 <head> 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <style> 
-.animation{
-    user-select: none;
-    cursor: default;
-    text-transform: uppercase;
-    background-image: linear-gradient(
-    -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
+<style> 
+    .animation{
+        user-select: none;
+        cursor: default;
+        text-transform: uppercase;
+        background-image: linear-gradient(
+        -225deg,
+        #231557 0%,
+        #44107a 29%,
+        #ff1361 67%,
+        #fff800 100%
   );
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 3s linear infinite;
-      font-size: 50px;
-}
+        background-size: 200% auto;
+        color: #fff;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 3s linear infinite;
+        font-size: 50px;
+    }
 
-@keyframes textclip {
-  to {
-    background-position: 200% center;
-  }
-}
-.form-container {
-    width: 50%;
-    margin: 0 auto;
-}
+    @keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+    }
+    .form-container {
+        width: 50%;
+        margin: 0 auto;}
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-}
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;}
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group select {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group select {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;}
 
-.form-group button {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    .form-group button {
+        padding: 0.5rem 1rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;}
 
-.form-group button:hover {
-    background-color: #0056b3;
-}
-
-    </style>
+    .form-group button:hover {background-color: #0056b3;}
+</style>
 </head>
 
 <body>

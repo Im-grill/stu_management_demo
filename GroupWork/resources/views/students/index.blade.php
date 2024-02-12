@@ -7,7 +7,8 @@
     <title>Document</title>
     <link href="{{ secure_asset('/css/style.css') }}" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <script>
+    <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" />
+<script>
         document.addEventListener("DOMContentLoaded", function() {
           const animatedDivs = document.querySelectorAll('.Animated');
           animatedDivs.forEach((div, index) => {
@@ -20,95 +21,95 @@
           });
         });
       </script>
-    <style> 
+<style> 
     h3{color:rgb(53, 255, 53);} h4{color:#c44949}
     @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
-body {
-    user-select: none;
-    cursor: default;
-  text-align:center;
-}
-.Animated {
-  display:inline-flex;
-  overflow:hidden;
-  white-space:nowrap;
-}
+    body {
+        user-select: none;
+        cursor: default;
+        text-align:center;
+    }
+    .Animated {
+        display:inline-flex;
+        overflow:hidden;
+        white-space:nowrap;
+    }
 
-.animated-showup {  
-  animation: showup 7s infinite;
-}
+    .animated-showup {  
+        animation: showup 7s infinite;
+    }
 
-.animated-reveal {
-  width:0px;
-  animation: reveal 7s infinite;
-}
+    .animated-reveal {
+        width:0px;
+        animation: reveal 7s infinite;
+    }
 
-.animated-slidein span {
-  margin-left:-355px;
-  animation: slidein 7s infinite;
-}
+    .animated-slidein span {
+        margin-left:-355px;
+        animation: slidein 7s infinite;
+    }
 
-@keyframes showup {
-    0% {opacity:0;}
-    20% {opacity:1;}
-    80% {opacity:1;}
-    100% {opacity:0;}
-}
+    @keyframes showup {
+        0% {opacity:0;}
+        20% {opacity:1;}
+        80% {opacity:1;}
+        100% {opacity:0;}
+    }
 
-@keyframes slidein {
-    0% { margin-left:-800px; }
-    20% { margin-left:-800px; }
-    35% { margin-left:0px; }
-    100% { margin-left:0px; }
-}
+    @keyframes slidein {
+        0% { margin-left:-800px; }
+        20% { margin-left:-800px; }
+        35% { margin-left:0px; }
+        100% { margin-left:0px; }
+    }
 
-@keyframes reveal {
-    0% {opacity:0;width:0px;}
-    20% {opacity:1;width:0px;}
-    30% {width:355px;}
-    80% {opacity:1;}
-    100% {opacity:0;width:355px;}
-}
+    @keyframes reveal {
+        0% {opacity:0;width:0px;}
+        20% {opacity:1;width:0px;}
+        30% {width:355px;}
+        80% {opacity:1;}
+        100% {opacity:0;width:355px;}
+    }
 
 
     .btn-primary{
         float: right;
     }
-    table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
 
-thead {
-    background-color: #f2f2f2;
-}
+    thead {
+        background-color: #f2f2f2;
+    }
 
-th, td {
-    padding: 8px;
-    text-align: left;
-}
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
 
-th {
-    background-color: #333;
-    color: white;
-}
+    th {
+        background-color: #333;
+        color: white;
+    }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
+    r:nth-child(even) {
+        background-color: #f2f2f2;
+    }
 
-tr:hover {
-    background-color: #ddd;
-}
+    tr:hover {
+        background-color: #ddd;
+    }
 
-img {
-    max-width: 100px;
-    height: auto;
-}
+    img {
+        max-width: 100px;
+        height: auto;
+    }
 
-    </style>
+</style>
 
 </head>
 <body>

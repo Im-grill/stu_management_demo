@@ -1,31 +1,31 @@
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+<style>
         .animation{
             user-select: none;
             cursor: default;
     text-transform: uppercase;
     background-image: linear-gradient(
-    -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
-  );
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 2s linear infinite;
+        -225deg,
+        #231557 0%,
+        #44107a 29%,
+        #ff1361 67%,
+        #fff800 100%
+        );
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
       font-size: 50px;
-}
+    }
 
-@keyframes textclip {
-  to {
-    background-position: 200% center;
-  }
-}
-    </style>
+    @keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+    }
+</style>
     
 
 </head>
