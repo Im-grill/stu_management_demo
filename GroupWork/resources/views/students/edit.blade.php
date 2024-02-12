@@ -1,7 +1,28 @@
 <head> 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <style> 
-h2{text-align: center;}
+.animation{
+    text-transform: uppercase;
+    background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+      font-size: 50px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
 .form-container {
     width: 50%;
     margin: 0 auto;
@@ -38,7 +59,9 @@ h2{text-align: center;}
 </head>
 
 <body>
-<h2>Edit a student</h2>
+    <div class="col-md-12 text-center">
+        <h3 class="animation"> Edit a student </h3>
+      </div>
 <div class="form-container">
     <form action="{{ url('/students/' . $student->id) }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -69,7 +92,10 @@ h2{text-align: center;}
 
         <div class="form-group">
             <label for="image">Upload Image:</label>
-            <input type="file" id="image" name="image">
+            <input type="file" id="photo" name="photo">
+            <div class="currentPhoto">
+            <img src="{{asset('storage/photos/'.$student->photo)}}" width="70px" height="70px" alt="Image">
+            </div>
         </div>
 
         <div class="form-group">

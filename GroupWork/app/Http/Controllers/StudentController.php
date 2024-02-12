@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Illuminate\Support\Facades\File;
 
 class StudentController extends Controller
 {
@@ -69,7 +70,7 @@ class StudentController extends Controller
             $photoPath = $request->file('photo')->storeAs('public/photos', $request->file('photo')->getClientOriginalName());
             $student->photo = basename($photoPath);
         }
-        $student->save();
+        $student->update();
     
         return redirect()->route('students.index')->with('success', 'Student updated successfully.');
     }
@@ -78,7 +79,6 @@ class StudentController extends Controller
     public function destroy(Student $student)
     {
         $student->delete();
-    
         return redirect()->route('students.index')->with('success', 'Student deleted successfully.');
     }
 }

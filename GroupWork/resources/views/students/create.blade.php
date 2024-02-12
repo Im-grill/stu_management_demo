@@ -1,7 +1,28 @@
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        h2{text-align: center;}
+        .animation{
+    text-transform: uppercase;
+    background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+      font-size: 50px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
     </style>
     
 
@@ -11,7 +32,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h2>Add Student</h2>
+                  <div class="col-md-12 text-center">
+                    <h3 class="animation"> Add a student </h3>
+                  </div>
+                  
             <form action="/students" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
