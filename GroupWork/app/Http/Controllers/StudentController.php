@@ -42,8 +42,7 @@ class StudentController extends Controller
         
 
         $student->save();
-
-        return redirect('/students')->with('success', 'Student created successfully!');
+        return redirect()->route('students.index');
     }
 
     //edit student
@@ -72,7 +71,7 @@ class StudentController extends Controller
         }
         $student->update();
     
-        return redirect()->route('students.index')->with('success', 'Student updated successfully.');
+        return redirect()->back()->with('success', 'Student updated successfully.');
     }
 
     //Delete a student

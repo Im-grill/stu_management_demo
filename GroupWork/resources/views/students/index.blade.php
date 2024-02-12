@@ -7,14 +7,71 @@
     <title>Document</title>
     <link href="{{ secure_asset('/css/style.css') }}" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const animatedDivs = document.querySelectorAll('.Animated');
+          animatedDivs.forEach((div, index) => {
+            div.classList.add('animated-showup');
+            if (index === animatedDivs.length - 1) {
+              div.classList.add('animated-reveal');
+              const span = div.querySelector('span');
+              span.parentElement.classList.add('animated-slidein');
+            }
+          });
+        });
+      </script>
     <style> 
-    h1 {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
+    h3{color:rgb(53, 255, 53);} h4{color:#c44949}
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+body {
+    user-select: none;
+    cursor: default;
+  text-align:center;
 }
+.Animated {
+  display:inline-flex;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.animated-showup {  
+  animation: showup 7s infinite;
+}
+
+.animated-reveal {
+  width:0px;
+  animation: reveal 7s infinite;
+}
+
+.animated-slidein span {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:355px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:355px;}
+}
+
+
     .btn-primary{
         float: right;
     }
@@ -55,8 +112,14 @@ img {
 
 </head>
 <body>
-    <h1> Student List </h1>
+    <div class="Animated"><h3>Greenwich University</h3></div> 
+<div class="Animated"> 
+  <span><h4>Student List</h4></span>
+</div>
+
+    <div class="function">
     <a href="{{ route('students.create') }}" class="btn btn-primary">Add a student</a>
+</div>
     <table border="1">
         <thead>
             <tr>
@@ -83,8 +146,6 @@ img {
                         @endif
                     </td>
                     <td>
-                        
-
                         <form action="{{ route('students.destroy', $student->id) }}" method="POST">
                             @csrf
                             @method('DELETE')

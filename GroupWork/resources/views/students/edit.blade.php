@@ -2,6 +2,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <style> 
 .animation{
+    user-select: none;
+    cursor: default;
     text-transform: uppercase;
     background-image: linear-gradient(
     -225deg,
@@ -63,6 +65,11 @@
         <h3 class="animation"> Edit a student </h3>
       </div>
 <div class="form-container">
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <form action="{{ url('/students/' . $student->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')

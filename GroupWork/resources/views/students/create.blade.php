@@ -2,6 +2,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .animation{
+            user-select: none;
+            cursor: default;
     text-transform: uppercase;
     background-image: linear-gradient(
     -225deg,
@@ -37,6 +39,11 @@
                   </div>
                   
             <form action="/students" method="POST" enctype="multipart/form-data">
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
                 @csrf
                 <div class="form-group">
                     <label for="name">Name:</label>
