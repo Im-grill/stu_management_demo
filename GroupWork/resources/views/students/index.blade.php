@@ -26,6 +26,7 @@
     @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
     body {
+        font-family: 'aria', cursive;
         user-select: none;
         cursor: default;
         text-align:center;
