@@ -125,6 +125,7 @@
     <table border="1">
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
@@ -136,6 +137,7 @@
         <tbody>
             @foreach($students as $student)
                 <tr>
+                    <td>{{ $student-> id }}</td>
                     <td>{{ $student->name }}</td>
                     <td>{{ $student->email }}</td>
                     <td>{{ $student->phone }}</td>
